@@ -1,0 +1,16 @@
+export const GAME_WIDTH = 960;
+export const GAME_HEIGHT = 640;
+export const MAX_PLAYERS = 4;
+export const MIN_PLAYERS = 2;
+export const PLAYER_RADIUS = 18;
+export const BULLET_RADIUS = 4;
+export const PLAYER_SPEED = 190;
+export const BODY_ROTATION_SPEED = Math.PI * 1.9;
+export const TURRET_ROTATION_SPEED = Math.PI * 2.4;
+export const BULLET_SPEED = 420;
+export const FIRE_COOLDOWN_MS = 450;
+export const MAX_HP = 4;
+export const TICK_RATE = 20;
+export const ROUND_DURATION_MS = 180000;
+export const ROOM_IDLE_TTL_MS = 10 * 60 * 1000;
+export const SNAPSHOT_INTERVAL_MS = 1000 / 10;

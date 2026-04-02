@@ -1,0 +1,155 @@
+:root {
+  color-scheme: light;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, #264653 0%, #1f2a33 40%, #10161c 100%);
+  color: #f1faee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.shell {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.panel {
+  width: min(960px, 100%);
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  background: rgba(8, 12, 17, 0.72);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.3);
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.hero h1,
+.hero h2 {
+  margin: 0 0 12px;
+}
+
+.hero p,
+.muted {
+  color: #b6c2c9;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+input,
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font: inherit;
+}
+
+input {
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.09);
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+button {
+  cursor: pointer;
+  background: #f4a261;
+  color: #10161c;
+  font-weight: 700;
+}
+
+button.secondary {
+  background: #2a9d8f;
+}
+
+button.ghost {
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+}
+
+.slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.slot {
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.slot strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: rgba(244, 162, 97, 0.2);
+  color: #ffd8b7;
+}
+
+.hud {
+  position: fixed;
+  inset: 16px 16px auto 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(9, 14, 20, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  z-index: 20;
+}
+
+.game-shell {
+  position: relative;
+}
+
+.canvas-wrap {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.notice {
+  color: #ffd8b7;
+  margin-top: 12px;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    flex-direction: column;
+  }
+}
