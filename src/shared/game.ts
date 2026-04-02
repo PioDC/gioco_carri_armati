@@ -9,6 +9,7 @@ import {
   PLAYER_RADIUS,
   PLAYER_SPEED,
   ROUND_DURATION_MS,
+  TURRET_FORWARD_OFFSET,
   TURRET_ROTATION_SPEED
 } from "./constants";
 import type {
@@ -194,8 +195,8 @@ function spawnBullet(record: ServerPlayerRecord, now: number): BulletState | nul
     id: `${record.state.id}-${now}-${record.input.seq}`,
     ownerId: record.state.id,
     position: {
-      x: record.state.position.x + Math.cos(angle) * (PLAYER_RADIUS + 6),
-      y: record.state.position.y + Math.sin(angle) * (PLAYER_RADIUS + 6)
+      x: record.state.position.x + Math.cos(angle) * (PLAYER_RADIUS + TURRET_FORWARD_OFFSET),
+      y: record.state.position.y + Math.sin(angle) * (PLAYER_RADIUS + TURRET_FORWARD_OFFSET)
     },
     velocity: {
       x: Math.cos(angle) * BULLET_SPEED,

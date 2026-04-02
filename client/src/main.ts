@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 import "./style.css";
-import { GAME_HEIGHT, GAME_WIDTH, MAX_HP } from "../../src/shared/constants";
+import { GAME_HEIGHT, GAME_WIDTH, MAX_HP, TURRET_FORWARD_OFFSET } from "../../src/shared/constants";
 import type {
   ClientMessage,
   CreateRoomResponse,
@@ -225,7 +225,10 @@ class ArenaScene extends Phaser.Scene {
     visuals.body.setFillStyle(color);
     visuals.body.setPosition(player.position.x, player.position.y);
     visuals.body.setRotation(player.bodyRotation);
-    visuals.turret.setPosition(player.position.x, player.position.y);
+    visuals.turret.setPosition(
+      player.position.x + Math.cos(player.turretRotation) * TURRET_FORWARD_OFFSET,
+      player.position.y + Math.sin(player.turretRotation) * TURRET_FORWARD_OFFSET
+    );
     visuals.turret.setRotation(player.turretRotation);
   }
 }
